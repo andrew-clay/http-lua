@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+</head>
+<body>
+    <h1>{{title}}</h1>
+    
+    {% if show_items %}
+    <ul>
+        {% for item in items %}
+        <li>{{name}} - ${{price}}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No items to display.</p>
+    {% endif %}
+
+    <h2>Linear For Loop</h2>
+    <ul>
+        {% for i = 1, loop_count, 1 %}
+        <li>Item {{i}}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>While Loop</h2>
+    <ul>
+        {% set counter = 1 %}
+        {% while counter <= loop_count %}
+        <li>Counter {{counter}}</li>
+        {% set counter = counter + 1 %}
+        {% endwhile %}
+    </ul>
+
+    <h2>Repeat Until Loop</h2>
+    <ul>
+        {% set counter = 1 %}
+        {% repeat %}
+        <li>Repeat Counter {{counter}}</li>
+        {% set counter = counter + 1 %}
+        {% until counter > loop_count %}
+    </ul>
+</body>
+</html>
